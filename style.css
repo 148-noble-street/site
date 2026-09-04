@@ -244,11 +244,6 @@ img {
   text-underline-offset: 0.3em;
 }
 
-.menus-photo-link {
-  display: block;
-  cursor: zoom-in;
-}
-
 .menus-photo {
   width: 100%;
   height: auto;
@@ -326,7 +321,7 @@ img {
     margin-top: 4rem;
   }
 
-  .menus-photo-link {
+  .menus-photo {
     margin-top: 4rem;
   }
 }
