@@ -9,12 +9,18 @@
     <link rel="icon" href="assets/logo/favicon.png">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="info-page">
     <header class="site-header">
       <a class="site-logo" href="index.html" aria-label="148 Noble Street home">
-        <img src="assets/logo/148noblestreet-web.png" alt="" width="480" height="424">
+        <img
+          src="assets/logo/148noblestreet-web.png"
+          srcset="assets/logo/148noblestreet-web-240.png 240w, assets/logo/148noblestreet-web.png 480w"
+          sizes="(max-width: 700px) 8.5rem, clamp(8.75rem, 11.7vw, 11.375rem)"
+          alt=""
+          width="480"
+          height="345">
       </a>
-      <a class="header-action" href="mailto:info@148noblestreet.com?subject=Table%20request">Book a table</a>
+      <a class="header-action" href="https://resy.com/cities/new-york-ny/venues/148-noble-street">Book a table</a>
     </header>
 
     <main class="page">
@@ -25,7 +31,7 @@
 
       <div class="info-layout">
         <div class="info-copy">
-          <p class="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="about">Tucked away on a historic block in Greenpoint, 148 Noble Street offers seasonal fare and curated wines. 148 is classic, energetic — focused and unruly.</p>
 
           <dl class="details">
             <div>
@@ -39,36 +45,20 @@
           </dl>
         </div>
 
-        <div class="gallery">
-          <img
-            class="gallery-primary"
-            src="assets/photos/optimized/chef1-placeholder.jpg"
-            srcset="
-              assets/photos/optimized/chef1-480.jpg 343w,
-              assets/photos/optimized/chef1-960.jpg 686w,
-              assets/photos/optimized/chef1-1600.jpg 1143w,
-              assets/photos/optimized/chef1.jpg 1824w
-            "
-            sizes="(max-width: 700px) 74vw, 42vw"
-            alt="A chef plating in the kitchen"
-            width="1824"
-            height="2553"
-            loading="lazy">
-          <img
-            class="gallery-secondary"
-            src="assets/photos/optimized/garnish-placeholder.jpg"
-            srcset="
-              assets/photos/optimized/garnish-480.jpg 384w,
-              assets/photos/optimized/garnish-960.jpg 768w,
-              assets/photos/optimized/garnish-1600.jpg 1280w,
-              assets/photos/optimized/garnish.jpg 2236w
-            "
-            sizes="(max-width: 700px) 42vw, 20vw"
-            alt="Garnishing a dish"
-            width="2236"
-            height="2795"
-            loading="lazy">
-        </div>
+        <img
+          class="info-photo"
+          src="assets/photos/optimized/info-placeholder.jpg"
+          srcset="
+            assets/photos/optimized/info-480.jpg 320w,
+            assets/photos/optimized/info-960.jpg 640w,
+            assets/photos/optimized/info-1600.jpg 1068w,
+            assets/photos/optimized/info.jpg 1600w
+          "
+          sizes="(max-width: 700px) 56vw, min(56vw, 66.75svh)"
+          alt="Setting a table at 148 Noble Street"
+          width="1600"
+          height="2397"
+          fetchpriority="high">
       </div>
     </main>
 

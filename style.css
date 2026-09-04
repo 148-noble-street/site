@@ -57,9 +57,10 @@ img {
   position: absolute;
   z-index: 2;
   top: 0;
-  right: 0;
+  right: auto;
   left: 0;
   display: flex;
+  width: 44%;
   align-items: flex-start;
   justify-content: space-between;
   padding: var(--pad);
@@ -71,7 +72,7 @@ img {
 }
 
 .site-logo {
-  width: clamp(6.75rem, 9vw, 8.75rem);
+  width: clamp(8.75rem, 11.7vw, 11.375rem);
 }
 
 .site-logo img {
@@ -81,10 +82,6 @@ img {
 
 .header-action {
   padding-top: 0.35rem;
-}
-
-.home-page .header-action {
-  color: var(--paper);
 }
 
 .home {
@@ -169,20 +166,32 @@ img {
   margin-bottom: clamp(4rem, 7vw, 7rem);
 }
 
-.info-layout,
-.menus-layout {
-  display: grid;
-  align-items: start;
-  gap: clamp(3rem, 9vw, 11rem);
+.info-page .page,
+.menus-page .page {
+  position: relative;
+  height: max(100svh, 42rem);
+  padding-bottom: 0;
 }
 
-.info-layout {
-  grid-template-columns: minmax(14rem, 0.55fr) minmax(0, 1.45fr);
+.info-page .page-nav,
+.menus-page .page-nav {
+  position: relative;
+  z-index: 1;
+}
+
+.info-layout,
+.menus-layout {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 44% 56%;
 }
 
 .info-copy {
   display: grid;
-  gap: clamp(3rem, 6vw, 6rem);
+  align-self: center;
+  gap: clamp(2.5rem, 4vw, 4rem);
+  padding: 0 var(--pad);
 }
 
 .about,
@@ -197,12 +206,11 @@ img {
 
 .details {
   display: grid;
-  gap: clamp(3rem, 6vw, 6rem);
+  gap: clamp(2rem, 3vw, 3rem);
   margin: 0;
 }
 
-.details dt,
-.kicker {
+.details dt {
   margin: 0 0 1rem;
   color: rgba(17, 17, 15, 0.58);
   font-size: 0.65rem;
@@ -213,29 +221,27 @@ img {
   overflow-wrap: anywhere;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(7rem, 0.75fr);
-  align-items: end;
-  gap: clamp(1rem, 3vw, 3rem);
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-.gallery-secondary {
-  margin-bottom: 18%;
-}
-
-.menus-layout {
-  grid-template-columns: minmax(18rem, 1fr) minmax(18rem, 0.75fr);
-}
-
+.info-photo,
 .menus-photo {
-  width: 100%;
-  height: auto;
+  grid-column: 2;
+  grid-row: 1;
+  width: auto;
+  height: 100%;
+  min-height: 0;
+  max-width: 100%;
+  justify-self: center;
+  object-fit: contain;
+}
+
+.menus-enlarge {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: start;
+  margin: 0 0 var(--pad) var(--pad);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
 }
 
 .sr-only {
@@ -249,15 +255,12 @@ img {
 
 @media (max-width: 700px) {
   .site-header {
+    width: 100%;
     padding-top: 1.15rem;
   }
 
   .site-logo {
-    width: 6.5rem;
-  }
-
-  .home-page .header-action {
-    color: var(--ink);
+    width: 8.5rem;
   }
 
   .home {
@@ -266,7 +269,7 @@ img {
   }
 
   .home-panel {
-    min-height: 72svh;
+    min-height: max(22rem, calc(100svh - 66.667vw));
   }
 
   .home-photo {
@@ -297,22 +300,73 @@ img {
     margin-bottom: 4.5rem;
   }
 
-  .info-layout,
-  .menus-layout {
-    display: block;
+  .menus-page .page {
+    height: auto;
+    min-height: 100svh;
+    padding-bottom: var(--pad);
   }
 
-  .details {
-    gap: 3rem;
+  .menus-page .page-nav {
+    margin-bottom: 2.5rem;
   }
 
-  .gallery {
-    margin-top: 4rem;
+  .menus-page .menus-layout {
+    position: static;
+    display: flex;
+    flex-direction: column;
   }
 
-  .menus-photo {
-    width: 72%;
-    margin: 4rem 0 0 auto;
+  .info-page .page {
+    display: flex;
+    height: max(100svh, 40rem);
+    flex-direction: column;
+    padding-bottom: var(--pad);
+  }
+
+  .info-page .page-nav {
+    margin-bottom: 2.5rem;
+  }
+
+  .info-page .info-layout {
+    position: static;
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .info-page .info-copy {
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .info-page .details {
+    gap: 1.5rem;
+  }
+
+  .info-page .info-photo {
+    grid-column: 1;
+    grid-row: 2;
+    width: auto;
+    height: 100%;
+    max-width: 56vw;
+    align-self: end;
+    object-position: right bottom;
+  }
+
+  .menus-page .menus-photo {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .menus-page .menus-enlarge {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: flex-start;
+    margin: 1rem 0 0;
   }
 }
 
