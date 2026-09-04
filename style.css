@@ -71,7 +71,7 @@ img {
 }
 
 .site-logo {
-  width: clamp(6.75rem, 9vw, 8.75rem);
+  width: clamp(8.75rem, 11.7vw, 11.375rem);
 }
 
 .site-logo img {
@@ -253,7 +253,7 @@ img {
   }
 
   .site-logo {
-    width: 6.5rem;
+    width: 8.5rem;
   }
 
   .home-page .header-action {
@@ -266,7 +266,7 @@ img {
   }
 
   .home-panel {
-    min-height: 72svh;
+    min-height: max(22rem, calc(100svh - 66.667vw));
   }
 
   .home-photo {
