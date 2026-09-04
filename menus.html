@@ -30,22 +30,29 @@
       </nav>
 
       <div class="menus-layout">
-        <p class="kicker">Sample menus</p>
+        <div class="menus-meta">
+          <p class="kicker">Sample menu</p>
+          <a class="menus-enlarge" href="assets/menu/optimized/menu.jpg">View full size</a>
+        </div>
 
-        <img
-          class="menus-photo"
-          src="assets/photos/optimized/plate-placeholder.jpg"
-          srcset="
-            assets/photos/optimized/plate-480.jpg 480w,
-            assets/photos/optimized/plate-960.jpg 960w,
-            assets/photos/optimized/plate-1600.jpg 1600w,
-            assets/photos/optimized/plate.jpg 4032w
-          "
-          sizes="(max-width: 700px) 72vw, 38vw"
-          alt="A plate from the kitchen"
-          width="4032"
-          height="3024"
-          loading="lazy">
+        <a
+          class="menus-photo-link"
+          href="assets/menu/optimized/menu.jpg"
+          aria-label="View the September 2026 sample menu full size">
+          <img
+            class="menus-photo"
+            src="assets/menu/optimized/menu-480.jpg"
+            srcset="
+              assets/menu/optimized/menu-480.jpg 480w,
+              assets/menu/optimized/menu-960.jpg 960w,
+              assets/menu/optimized/menu.jpg 1500w
+            "
+            sizes="(max-width: 700px) calc(100vw - 2rem), min(55vw, 44rem)"
+            alt="September 2026 sample menu"
+            width="1500"
+            height="2100"
+            loading="lazy">
+        </a>
       </div>
     </main>
 

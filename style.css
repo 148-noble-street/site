@@ -235,7 +235,18 @@ img {
 }
 
 .menus-layout {
-  grid-template-columns: minmax(18rem, 1fr) minmax(18rem, 0.75fr);
+  grid-template-columns: minmax(8rem, 1fr) min(55vw, 44rem);
+}
+
+.menus-enlarge {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.menus-photo-link {
+  display: block;
+  cursor: zoom-in;
 }
 
 .menus-photo {
@@ -315,9 +326,8 @@ img {
     margin-top: 4rem;
   }
 
-  .menus-photo {
-    width: 72%;
-    margin: 4rem 0 0 auto;
+  .menus-photo-link {
+    margin-top: 4rem;
   }
 }
 
