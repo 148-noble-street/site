@@ -166,20 +166,33 @@ img {
   margin-bottom: clamp(4rem, 7vw, 7rem);
 }
 
-.info-page .page,
 .menus-page .page {
   position: relative;
   height: max(100svh, 42rem);
   padding-bottom: 0;
 }
 
-.info-page .page-nav,
+.info-page .page {
+  display: grid;
+  min-height: max(100svh, 42rem);
+  grid-template-columns: 44% 56%;
+  grid-template-rows: auto minmax(0, 1fr);
+  padding: 0;
+}
+
+.info-page .page-nav {
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  padding: clamp(9rem, 13vw, 12rem) var(--pad) clamp(2.5rem, 5svh, 4.5rem);
+}
+
 .menus-page .page-nav {
   position: relative;
   z-index: 1;
 }
 
-.info-layout,
 .menus-layout {
   position: absolute;
   inset: 0;
@@ -190,8 +203,10 @@ img {
 .info-copy {
   display: grid;
   align-self: center;
+  grid-column: 1;
+  grid-row: 2;
   gap: clamp(2.5rem, 4vw, 4rem);
-  padding: 0 var(--pad);
+  padding: 0 var(--pad) clamp(2rem, 5svh, 4rem);
 }
 
 .about,
@@ -231,6 +246,10 @@ img {
   max-width: 100%;
   justify-self: center;
   object-fit: contain;
+}
+
+.info-photo {
+  grid-row: 1 / -1;
 }
 
 .menus-enlarge {
@@ -317,28 +336,24 @@ img {
   }
 
   .info-page .page {
-    display: flex;
-    height: max(100svh, 40rem);
-    flex-direction: column;
-    padding-bottom: var(--pad);
+    min-height: max(100svh, 40rem);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto minmax(12rem, 1fr);
+    padding: 8.5rem var(--pad) var(--pad);
   }
 
   .info-page .page-nav {
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 2.5rem;
-  }
-
-  .info-page .info-layout {
-    position: static;
-    display: grid;
-    flex: 1;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(0, 1fr);
-    gap: 2rem;
+    padding: 0;
   }
 
   .info-page .info-copy {
+    grid-column: 1;
+    grid-row: 2;
     gap: 2rem;
-    padding: 0;
+    padding: 0 0 2rem;
   }
 
   .info-page .details {
@@ -347,7 +362,7 @@ img {
 
   .info-page .info-photo {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
     width: auto;
     height: 100%;
     max-width: 56vw;
