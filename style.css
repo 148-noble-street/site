@@ -174,6 +174,18 @@ img {
   margin-bottom: clamp(4rem, 7vw, 7rem);
 }
 
+.info-page .page {
+  display: flex;
+  height: max(100svh, 42rem);
+  flex-direction: column;
+  padding-bottom: var(--pad);
+}
+
+.info-page .page-nav {
+  flex: 0 0 auto;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
 .info-layout,
 .menus-layout {
   display: grid;
@@ -182,12 +194,19 @@ img {
 }
 
 .info-layout {
-  grid-template-columns: minmax(14rem, 0.55fr) minmax(0, 1.45fr);
+  grid-template-columns: minmax(14rem, 0.65fr) minmax(0, 1.35fr);
+}
+
+.info-page .info-layout {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
 }
 
 .info-copy {
   display: grid;
-  gap: clamp(3rem, 6vw, 6rem);
+  align-self: start;
+  gap: clamp(2.5rem, 4vw, 4rem);
 }
 
 .about,
@@ -202,7 +221,7 @@ img {
 
 .details {
   display: grid;
-  gap: clamp(3rem, 6vw, 6rem);
+  gap: clamp(2rem, 3vw, 3rem);
   margin: 0;
 }
 
@@ -218,20 +237,13 @@ img {
   overflow-wrap: anywhere;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(7rem, 0.75fr);
-  align-items: end;
-  gap: clamp(1rem, 3vw, 3rem);
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-.gallery-secondary {
-  margin-bottom: 18%;
+.info-photo {
+  width: auto;
+  height: 100%;
+  min-height: 0;
+  justify-self: end;
+  object-fit: contain;
+  object-position: right top;
 }
 
 .menus-layout {
@@ -308,17 +320,40 @@ img {
     margin-bottom: 4.5rem;
   }
 
-  .info-layout,
   .menus-layout {
     display: block;
   }
 
-  .details {
-    gap: 3rem;
+  .info-page .page {
+    height: max(100svh, 40rem);
+    padding-bottom: var(--pad);
   }
 
-  .gallery {
-    margin-top: 4rem;
+  .info-page .page-nav {
+    margin-bottom: 2.5rem;
+  }
+
+  .info-page .info-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .info-page .info-copy {
+    gap: 2rem;
+  }
+
+  .info-page .details {
+    gap: 1.5rem;
+  }
+
+  .info-page .info-photo {
+    width: auto;
+    height: 100%;
+    max-width: 48vw;
+    align-self: end;
+    object-position: right bottom;
   }
 
   .menus-photo {
