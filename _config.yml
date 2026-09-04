@@ -1,0 +1,4 @@
+exclude:
+  - assets/logo/source
+  - assets/menu/source
+  - assets/photos/source
