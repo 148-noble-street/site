@@ -70,6 +70,11 @@ img {
   pointer-events: auto;
 }
 
+.home-page .site-header {
+  right: auto;
+  width: 44%;
+}
+
 .site-logo {
   width: clamp(8.75rem, 11.7vw, 11.375rem);
 }
@@ -84,7 +89,7 @@ img {
 }
 
 .home-page .header-action {
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .home {
@@ -252,12 +257,12 @@ img {
     padding-top: 1.15rem;
   }
 
-  .site-logo {
-    width: 8.5rem;
+  .home-page .site-header {
+    width: 100%;
   }
 
-  .home-page .header-action {
-    color: var(--ink);
+  .site-logo {
+    width: 8.5rem;
   }
 
   .home {
