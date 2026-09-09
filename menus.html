@@ -9,12 +9,18 @@
     <link rel="icon" href="assets/logo/favicon.png">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="menus-page">
     <header class="site-header">
       <a class="site-logo" href="index.html" aria-label="148 Noble Street home">
-        <img src="assets/logo/148noblestreet-web.png" alt="" width="480" height="424">
+        <img
+          src="assets/logo/148noblestreet-web.png"
+          srcset="assets/logo/148noblestreet-web-240.png 240w, assets/logo/148noblestreet-web.png 480w"
+          sizes="(max-width: 700px) 8.5rem, clamp(8.75rem, 11.7vw, 11.375rem)"
+          alt=""
+          width="480"
+          height="345">
       </a>
-      <a class="header-action" href="mailto:info@148noblestreet.com?subject=Table%20request">Book a table</a>
+      <a class="header-action" href="https://resy.com/cities/new-york-ny/venues/148-noble-street">Book a table</a>
     </header>
 
     <main class="page">
@@ -24,22 +30,21 @@
       </nav>
 
       <div class="menus-layout">
-        <p class="kicker">Sample menus</p>
-
         <img
           class="menus-photo"
-          src="assets/photos/optimized/plate-placeholder.jpg"
+          src="assets/menu/optimized/menu-480.jpg"
           srcset="
-            assets/photos/optimized/plate-480.jpg 480w,
-            assets/photos/optimized/plate-960.jpg 960w,
-            assets/photos/optimized/plate-1600.jpg 1600w,
-            assets/photos/optimized/plate.jpg 4032w
+            assets/menu/optimized/menu-480.jpg 480w,
+            assets/menu/optimized/menu-960.jpg 960w,
+            assets/menu/optimized/menu.jpg 1500w
           "
-          sizes="(max-width: 700px) 72vw, 38vw"
-          alt="A plate from the kitchen"
-          width="4032"
-          height="3024"
-          loading="lazy">
+          sizes="(max-width: 700px) calc(100vw - 2rem), min(56vw, 71.429svh)"
+          alt="September 2026 sample menu"
+          width="1500"
+          height="2100"
+          fetchpriority="high">
+
+        <a class="menus-enlarge" href="assets/menu/optimized/menu.jpg">View full size</a>
       </div>
     </main>
 
